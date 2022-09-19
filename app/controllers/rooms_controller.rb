@@ -16,6 +16,7 @@ class RoomsController < ApplicationController
 
     @message = Message.new
     @messages = @single_room.messages.order(created_at: :asc)
+
     @users = User.all_except(current_user)
     render 'index'
   end
